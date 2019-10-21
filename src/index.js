@@ -1,21 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Todolist from './Todolist/Todolist'
-import Request from './Request';
-import ShowTime from './showTime';
-//import {ShowTime} from './showTime'
-import { exportDefaultSpecifier, directive } from '@babel/types';
 
+ import Todolist from './Workone/Todolist'
+// import Request from './Request';
+// import ShowTime from './showTime';
+//import {ShowTime} from './showTime'
+// import Parent from './Context/Parent';
+ import {con}from './Context/Context';
+import Hoc from './Hoc/Hoc'
+import Portals from './Portal/Portals';
+import ParentPortal from './Portal/ParentPortal';
+import App from './App';
+let color = 'red';
+
+ReactDOM.render(
+    <Todolist/>,
+	 document.getElementById('root')
+); 
 
 //组件交互
 //父组件->子组件:调用时在子组件上添加属性
 //在子组件中通过props获取数据
 //子组件->父组件传递数据，调用子组件时往子组件传递一个函数
 //子组件通过props调用该函数
-ReactDOM.render(
-	<Request/>, document.getElementById('root')
-); 
 
 //1、JSX 语法
 

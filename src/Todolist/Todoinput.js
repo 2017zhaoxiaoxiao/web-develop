@@ -52,13 +52,18 @@ export default class Todoinput extends Component {
     render() {
         return (
             <div>
-                <lable style={{color:'red',fontSize:50}} htmlFor="inp">输入</lable>
-                <input id='inp' name='n1' onChange={this.handleChange} value={this.state.n1} onKeyDown={(e)=>this.handleInput(e)} type='text'/>
+                <label style={{
+                    color:this.state.n1+this.state.n2>10?'red':'green',
+                    fontSize:50
+                    }} 
+                    htmlFor="inp">输入：</label>
+                <input id="inp" name="n1" onChange={this.handleChange} value={this.state.n1} onKeyDown={(e)=>this.handleInput(e)} type="text"/>
                 +
-                <input name='n2' onChange={this.handleChange} value={this.state.n2} onKeyDown={(e)=>this.handleInput(e)} type='text'/>
-                <p dangerouslySetInnerHTML={{__html:this.state.n1+this.state}}></p>
-                <button >查询</button>
+                <input name="n2" onChange={this.handleChange} value={this.state.n2} onKeyDown={(e)=>this.handleInput(e)} type="text"/>
+                <p dangerouslySetInnerHTML={{__html:this.state.n1+this.state.n2}}></p>
+                <button>查询</button>
             </div>
         )
     }
+
 }
